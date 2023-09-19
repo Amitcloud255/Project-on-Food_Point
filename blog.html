@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<title> Pizza_Point </title>
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .background-image {
+        background-image: url(images/photo-bg15.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+        margin-bottom: 14px;
+        margin-top: -10px;
+        width: 98%;
+        border-radius: 20px;
+    }
+
+    .text-overlay {
+        position: relative;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+
+    body {
+        background-color: black;
+        background-size: cover;
+        position: relative;
+        height: 100%;
+        width: auto;
+    }
+
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    #wrap {
+        width: 100%;
+        height: 57px;
+        margin: 0;
+        position: relative;
+        background-color: chocolate;
+        border-radius: 10px;
+    }
+
+    .navbar {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        overflow: auto;
+
+    }
+
+    .navbar li {
+        width: 119px;
+        text-align: center;
+        list-style: none;
+        background: chocolate;
+        font-size: 15px;
+        float: left;
+        font-family: Arial;
+        padding: 0;
+        margin: 0;
+        background-color: chocolate;
+
+    }
+
+    .navbar a {
+        padding: 20px 10px;
+        text-decoration: none;
+        color: white;
+        display: block;
+    }
+
+    nav a:hover {
+        background: wheat;
+        color: black;
+        border-radius: 10px;
+    }
+
+    .navbar li ul {
+        display: none;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar li:hover ul {
+        display: block;
+    }
+
+    .navbar li ul li {
+        background-color: chocolate;
+
+
+    }
+
+    .navbar li ul li a:hover {
+        background-color: wheat;
+        color: black;
+
+    }
+
+    .search-form {
+        margin-top: 15px;
+        float: right;
+        margin-right: 25px;
+    }
+
+    input[type=text] {
+        padding: 7px;
+        border: none;
+        font-size: 12px;
+        font-family: sans-serif;
+    }
+
+
+    button {
+        float: right;
+        background: green;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        position: relative;
+        padding: 7px;
+        font-family: sans-serif;
+        border: none;
+        font-size: 12px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 22px;
+        width: 101%;
+        margin-top: 50px;
+        margin-bottom: -120px;
+        justify-content: space-between;
+    }
+
+    .footer-col {
+
+        flex-basis: 20%;
+        padding: 21px;
+        margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        margin-left: -25px;
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .footer-col h4::before {
+        content: '';
+        position: absolute;
+        left: 10;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+    }
+
+    .footer-col ul li a {
+        font-size: 14px;
+        font-family: 'poppins', sans-serif;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 7px;
+    }
+
+    .footer-col .social-links a {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 10px 10px 0;
+        margin-top: 0;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+    }
+
+
+    @media(max-width: 767px) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+    }
+
+    @media(max-width: 574px) {
+        .footer-col {
+            width: 100%;
+        }
+    }
+
+    p.copyright {
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        font-size: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin: 55px 0;
+        margin-top: 10%;
+        margin-bottom: 10px;
+    }
+
+    p.copyright a {
+        color: white;
+        text-decoration: none;
+    }
+
+    p.copyright a:hover {
+        text-decoration: none;
+        color: #ff0000;
+    }
+
+    
+ 
+    p a {
+        display: inline-block;
+        margin: 0 0 25px;
+    }
+
+
+    h1 {
+        text-align: center;
+        font-size: 55px;
+        font-weight: bold;
+        color: whitesmoke;
+        margin-bottom: 200px;
+        margin-top: -300px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px;
+    }
+
+    .blog-post {
+        margin: 20px;
+        padding: 20px;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #ddd;
+    }
+
+    .blog-post h2 {
+        color: #fff;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: darkorange;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .post-meta {
+        color: #888;
+        font-style: italic;
+        margin-bottom: 15px;
+    }
+
+    .blog-post p {
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 15px;
+        color: brown;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .blog-post .details {
+        margin-left: 20px;
+    }
+
+    .blog-post .details h3 {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: darkorange;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .blog-post .details p {
+        margin: 10px 0;
+    }
+</style>
+</head>
+
+<body>
+
+    <nav>
+        <div align="center">
+            <br>
+  
+              <div class="background-image"></div>
+              <hr>
+              <div id="wrap">
+                  <ul class="navbar">
+
+                    <ul>
+                        <form class="search-form">
+                            <input type="text" placeholder="search">
+                            <button>search</button>
+                        </form>
+
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html"> About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#"> Food_Point</a>
+                            <ul class="navbar">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="catering.html">Catering</a></li>
+                                <li><a href="reservations.html">Reservations</a></li>
+                                <li><a href="tips-tricks.html">Tips-Tricks & techniques</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+
+                            </ul>
+                    </ul>
+                </ul>
+                </li>
+
+            </div>
+        </div>
+        <hr>
+    </nav>
+    <div class="text-overlay">
+        <h1>Our Blog Page</h1>
+    </div><br><br>
+    <main>
+        <article class="blog-post">
+            <h2>Delicious Summer Specials</h2>
+            <p class="post-meta">Posted on August 25, 2023 by Food Shop Restaurant</p>
+            <p class="post-meta">
+            <img src="images/summer-dishes.jpg" alt="Delicious Summer Specials">
+            <p>Summer is here, and Food Shop Restaurant is thrilled to unveil our highly anticipated summer specials
+                menu. Get ready to embark on a culinary journey that celebrates the vibrant flavors of the season.</p>
+        </article>
+        <article class="blog-post">
+            <div class="details"><br>
+                <h3>Featured Dishes</h3>
+                <p>Our summer specials menu boasts an array of innovative and mouthwatering dishes:</p>
+                <p>Grilled Mango Tango Salad - A tantalizing blend of juicy mangoes, mixed greens, grilled chicken, and
+                    a zesty citrus dressing.</p>
+                <p>Seaside Seafood Paella - Dive into a medley of shrimp, mussels, clams, and chorizo, all expertly
+                    simmered with saffron-infused rice.</p>
+                <p>Tropical Sunshine Smoothie Bowl - A refreshing breakfast delight with layers of tropical fruits,
+                    yogurt, granola, and a drizzle of honey.</p>
+            </div><br>
+        </article>
+        <article class="blog-post">
+            <div class="details">
+                <h3>Seasonal Ingredients</h3>
+                <p>We take pride in sourcing the freshest locally grown produce for our dishes:</p>
+                <p>Tomatoes from a nearby farm to create the perfect base for our homemade marinara sauce.</p>
+                <p>Herbs like basil and mint grown in our own garden, adding aromatic accents to every plate.</p>
+                <p>Organic corn and bell peppers that add sweetness and crunch to our summer salads.</p>
+            </div><br>
+        </article>
+        <article class="blog-post">
+            <div class="details">
+                <h3>Refreshing Beverages</h3>
+                <p>Beat the heat with our selection of rejuvenating beverages:</p>
+                <p>Watermelon-Mint Sparkler - A fizzy concoction of freshly pressed watermelon juice and muddled mint
+                    leaves.</p>
+                <p>Pineapple Coconut Breeze - A tropical blend of pineapple, coconut milk, and a hint of ginger, served
+                    over ice.</p>
+                <p>Cucumber-Lime Refresher - Cool off with this cucumber and lime infused water, a perfect hydrating
+                    companion to your meal.</p>
+            </div><br>
+        </article>
+        <article class="blog-post">
+            <div class="details">
+                <h3>Relaxing Ambiance</h3>
+                <p>Our restaurant's serene ambiance is designed to enhance your dining experience:</p>
+                <p>Outdoor Seating: Enjoy your meal under the open sky, surrounded by lush greenery and the gentle
+                    rustling of leaves.</p>
+                <p>Live Music Evenings: Join us on Friday nights for live acoustic performances that set the mood for a
+                    perfect summer evening.</p>
+            </div>
+            <p>Visit Food Shop Restaurant today and savor the flavors of summer that will leave you craving for more.
+                These specials are available for a limited time, so make the most of the season!</p>
+        </article>
+
+    </main>
+
+    <div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4>Food company</h4>
+                        <ul>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="team.html">our team</a></li>
+                            <li><a href="about.html">our services</a></li>
+                            <li><a href="privacy-policy.html">privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="contact.html">contact us</a></li>
+                            <li><a href="contact.html">location</a></li>
+                            <li><a href="sitemap.html">sitemap</a></li>
+                            <li><a href="contact.html">frequently asked question</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Information</h4>
+                        <ul>
+                            <li><a href="#">Address: 123 Main Street, City State 12345</a></li>
+                            <li><a href="#">Phone: 123-456-7890</a></li>
+                            <li><a href="#">Email: info@foodpoint.com</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Opening Hours</h4>
+                        <ul>
+                            <li><a href="#">Monday To Friday<br>9:00 AM - 10:00 PM</a></li>
+                            <li><a href="#">Saturday or Sunday<br>10:00 AM - 11:00 PM</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <p class="copyright">copyright &copy;<a href="#"> 2050 info@foodpoint.com</a> | All Rights
+            Reserved | <a target="_blank" href="http://www.google.com/">Food_Point google.com</a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>

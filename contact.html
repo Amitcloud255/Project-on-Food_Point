@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Pizza_Point </title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            background-size: cover;
+            position: relative;
+            height: 100%;
+            width: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        img {
+            display: block;
+            margin: 1%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 57px;
+            margin: -5px;
+            position: relative;
+            background-color: chocolate;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: auto;
+
+        }
+
+        .navbar li {
+            width: 119px;
+            text-align: center;
+            list-style: none;
+            background: chocolate;
+            font-size: 15px;
+            float: left;
+            font-family: Arial;
+            padding: 0;
+            margin: 0;
+            background-color: chocolate;
+
+        }
+
+        .navbar a {
+            padding: 20px 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        nav a:hover {
+            background: wheat;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .navbar li ul {
+            display: none;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li:hover ul {
+            display: block;
+        }
+
+        .navbar li ul li {
+            background-color: chocolate;
+
+
+        }
+
+        .navbar li ul li a:hover {
+            background-color: wheat;
+            color: black;
+
+        }
+
+        .image-list li {
+            flex-basis: 100px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .image-list li a {
+            display: flex;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+
+        }
+
+        .image-list li a:hover {
+            text-decoration: none;
+            background-color: black;
+            color: #ff0000;
+        }
+
+        .image-list li img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            margin-right: 110px;
+            margin-left: -15px;
+            margin-bottom: 10px;
+        }
+
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: brown;
+
+        }
+
+        p a {
+            display: inline-block;
+            margin: 0 0 47px;
+        }
+
+
+      
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: darkorange;
+
+        }
+
+
+        .search-form {
+            margin-top: 15px;
+            float: right;
+            margin-right: 25px;
+        }
+
+        input[type=text] {
+            padding: 7px;
+            border: none;
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+
+        button {
+            float: right;
+            background: green;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            position: relative;
+            padding: 7px;
+            font-family: sans-serif;
+            border: none;
+            font-size: 12px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 22px;
+            width: 101%;
+            margin-top: 50px;
+            margin-bottom: -120px;
+            justify-content: space-between;
+        }
+
+        .footer-col {
+
+            flex-basis: 20%;
+            padding: 21px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-left: -25px;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 10;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            font-family: 'poppins', sans-serif;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 7px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            margin-top: 0;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+
+        @media(max-width: 767px) {
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+        p.copyright {
+            text-align: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            margin: 55px 0;
+            margin-top: 10%;
+            margin-bottom: 10px;
+        }
+
+        p.copyright a {
+            color: white;
+            text-decoration: none;
+        }
+
+        p.copyright a:hover {
+            text-decoration: none;
+            color: #ff0000;
+        }
+
+      
+       
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        .contact-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .contact-section h2 {
+            color: orangered;
+           
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .contact-details div {
+            flex: 1;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+
+        <div align="center">
+            <div id="header">
+                <div id="head-title"><br/></div>
+            </div>
+
+            <hr>
+            <div id="wrap">
+                <ul class="navbar">
+
+                    <ul>
+                        <form class="search-form">
+                            <input type="text" placeholder="search">
+                            <button>search</button>
+                        </form>
+
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html"> About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#"> Food_Point</a>
+                            <ul class="navbar">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="catering.html">Catering</a></li>
+                                <li><a href="reservations.html">Reservations</a></li>
+                                <li><a href="tips-tricks.html">Tips-Tricks & techniques</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+
+                            </ul>
+                    </ul>
+                </ul>
+                </li>
+
+            </div>
+        </div>
+        <hr>
+    </nav>
+
+    <div class="text-overlay"></div>
+        <h1></h1>
+        </div><br><br>
+
+        <main>
+            
+            <section class="contact-section">
+                <h2>Contact Us</h2>
+                <div class="contact-details">
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>123 Main Street</p>
+                        <p>City, Country</p>
+                    </div>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>Phone: +1 123-456-7890</p>
+                        <p>Email: contact@foodshoprestaurant.com</p>
+                    </div>
+                    <div>
+                        <h3>Opening Hours</h3>
+                        <p>Monday - Saturday: 11:00 AM - 10:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3></h3>
+                    <section class="contact-section">
+                        <h2>Place Your Food Delivery Order</h2>
+                        <form action="submit_order.php" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                            
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            
+                            <label for="address">Delivery Address:</label>
+                            <textarea id="address" name="address" rows="4" required></textarea>
+                            
+                            <label for="items">Items:</label>
+                            <select id="items" name="items" required>
+                                <option value="" disabled selected>Select an Item</option>
+                                <option value="burger">Burger</option>
+                                <option value="pizza">Pizza</option>
+                                <option value="pasta">Pasta</option>
+                                <option value="burger">Momos</option>
+                                <option value="pizza">Chow Mein</option>
+                                <option value="pasta">Cake</option>
+                            </select>
+                            
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" required>
+                            
+                            <label for="notes">Additional Notes:</label>
+                            <textarea id="notes" name="notes" rows="4"></textarea>
+                            
+                            <label for="delivery-time">Preferred Delivery Time:</label>
+                            <input type="datetime-local" id="delivery-time" name="delivery-time">
+                            
+                            <label for="payment-method">Payment Method:</label>
+                            <select id="payment-method" name="payment-method" required>
+                                <option value="" disabled selected>Select a Payment Method</option>
+                                <option value="credit-card">Credit Card</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="cash-on-delivery">Cash on Delivery</option>
+                            </select>
+                            
+                            <button type="submit">Place Order</button>
+                        </form>
+                    </section>
+                </div>
+            </section>
+
+
+        </main>
+
+        <div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="footer-col">
+                            <h4>Food company</h4>
+                            <ul>
+                                <li><a href="about.html">about us</a></li>
+                                <li><a href="team.html">our team</a></li>
+                                <li><a href="about.html">our services</a></li>
+                                <li><a href="privacy-policy.html">privacy policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>get help</h4>
+                            <ul>
+                                <li><a href="contact.html">contact us</a></li>
+                                <li><a href="contact.html">location</a></li>
+                                <li><a href="sitemap.html">sitemap</a></li>
+                                <li><a href="contact.html">frequently asked question</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact Information</h4>
+                            <ul>
+                                <li><a href="#">Address: 123 Main Street, City State 12345</a></li>
+                                <li><a href="#">Phone: 123-456-7890</a></li>
+                                <li><a href="#">Email: info@foodpoint.com</a></li>
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Opening Hours</h4>
+                            <ul>
+                                <li><a href="#">Monday To Friday<br>9:00 AM - 10:00 PM</a></li>
+                                <li><a href="#">Saturday or Sunday<br>10:00 AM - 11:00 PM</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>follow us</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <p class="copyright">copyright &copy;<a href="#"> 2050 info@foodpoint.com</a> | All Rights
+                Reserved | <a target="_blank" href="http://www.google.com/">Food_Point google.com</a>
+            </p>
+
+        </div>
+
+
+
+</body>
+
+</html>

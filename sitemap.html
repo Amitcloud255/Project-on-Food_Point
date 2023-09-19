@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual View Sitemap</title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .box li {
+            margin-bottom: 10px;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .box a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: url();
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            color: gray;
+            text-decoration: none;
+        }
+
+        .close-icon:hover {
+            color: black;
+        }
+
+        .box-text {
+
+            padding: 0 20px;
+            height: 500px;
+            overflow-y: auto;
+            font-size: 17px;
+            font-weight: 500;
+            color: black;
+
+        }
+
+        .box-text::-webkit-scrollbar {
+
+            width: 9px;
+            background-color: lightgrey;
+
+        }
+
+        .box-text::-webkit-scrollbar-thumb {
+
+            background-color: darkgray;
+
+        }
+
+
+        .box-text h2 {
+
+            text-transform: uppercase;
+            font-size: 20px;
+
+        }
+
+        .modal-overlay:target {
+            display: block;
+        }
+
+
+        .modal-overlay {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        
+      
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: whitesmoke;
+            padding: 50px;
+            width: 500px;
+            max-width: 90%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+   
+        <a href="#modal-overlay" class="#">sitemap</a>
+
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal">
+               
+                <a href="index.html" class="close-icon">&times;</a>
+
+                <div class="box-text">
+               
+                    <div class="box">
+                        <h2>Main Navigation</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="reviews.html">Reviews</a></li>
+                            <li><a href="recipes.html">Recipes</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                
+                  
+                    <div class="box">
+                        <h2>Food_Point</h2>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="catering.html">Catering</a></li>
+                            <li><a href="reservations.html">Reservations</a></li>
+                            <li><a href="tips-tricks.html">Tips-Tricks & Techniques</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </div>
+                
+                
+
+                </div>
+
+
+</body>
+
+</html>

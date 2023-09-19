@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<title> Pizza_Point </title>
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .background-image {
+        background-image: url(images/photo-bg4.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 50vh;
+            margin-bottom: 14px;
+            margin-top: -10px;
+            width: 98%;
+            border-radius: 20px;
+    }
+
+    .text-overlay {
+            position: relative;
+            bottom: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+
+    body {
+        background-color: black;
+        background-size: cover;
+        position: relative;
+        height: 100%;
+        width: auto;
+    }
+
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    img {
+        display: block;
+        margin: 1%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    #wrap {
+            width: 100%;
+            height: 57px;
+            margin: -5px;
+            position: relative;
+            background-color: chocolate;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: auto;
+
+        }
+
+        .navbar li {
+            width: 119px;
+            text-align: center;
+            list-style: none;
+            background: chocolate;
+            font-size: 15px;
+            float: left;
+            font-family: Arial;
+            padding: 0;
+            margin: 0;
+            background-color: chocolate;
+
+        }
+
+        .navbar a {
+            padding: 20px 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        nav a:hover {
+            background: wheat;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .navbar li ul {
+            display: none;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li:hover ul {
+            display: block;
+        }
+
+        .navbar li ul li {
+            background-color: chocolate;
+
+
+        }
+
+        .navbar li ul li a:hover {
+            background-color: wheat;
+            color: black;
+
+        }
+
+    .search-form {
+        margin-top: 15px;
+        float: right;
+        margin-right: 25px;
+    }
+
+    input[type=text] {
+        padding: 7px;
+        border: none;
+        font-size: 12px;
+        font-family: sans-serif;
+    }
+
+    div {
+        margin-bottom: 5px;
+    }
+
+    button {
+        float: right;
+        background: green;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        position: relative;
+        padding: 7px;
+        font-family: sans-serif;
+        border: none;
+        font-size: 12px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 22px;
+        width: 101%;
+        margin-top: 50px;
+        margin-bottom: -120px;
+        justify-content: space-between;
+    }
+
+    .footer-col {
+
+        flex-basis: 20%;
+        padding: 21px;
+        margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        margin-left: -25px;
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .footer-col h4::before {
+        content: '';
+        position: absolute;
+        left: 10;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+    }
+
+    .footer-col ul li a {
+        font-size: 14px;
+        font-family: 'poppins', sans-serif;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 7px;
+    }
+
+    .footer-col .social-links a {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 10px 10px 0;
+        margin-top: 0;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+    }
+
+
+    @media(max-width: 767px) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+    }
+
+    @media(max-width: 574px) {
+        .footer-col {
+            width: 100%;
+        }
+    }
+
+    p.copyright {
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        font-size: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin: 55px 0;
+        margin-top: 10%;
+        margin-bottom: 10px;
+    }
+
+    p.copyright a {
+        color: white;
+        text-decoration: none;
+    }
+
+    p.copyright a:hover {
+        text-decoration: none;
+        color: #ff0000;
+    }
+
+
+    p a {
+        display: inline-block;
+        margin: 0 0 25px;
+    }
+
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px;
+    }
+
+    .recipes {
+        margin-bottom: 24px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 16px;
+    }
+
+    .recipes-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 60px;
+        font-weight: bold;
+        color: whitesmoke;
+        margin-bottom: 200px;
+        margin-top: -300px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .recipes-header h2 {
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        color: darkorange;
+
+    }
+
+    .recipes-header h3 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: darkorange;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .recipes-header h4 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: darkorange;
+        font-family: cursive;
+
+    }
+
+    .recipes-content {
+        margin-top: 16px;
+        text-align: center;
+        font-size: 16px;
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+</style>
+</head>
+
+<body>
+        
+    <nav>
+        <div align="center">
+          <br>
+
+            <div class="background-image"></div>
+            <hr>
+            <div id="wrap">
+                <ul class="navbar">
+
+                    <ul>
+                        <form class="search-form">
+                            <input type="text" placeholder="search">
+                            <button>search</button>
+                        </form>
+
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html"> About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#"> Food_Point</a>
+                            <ul class="navbar">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="catering.html">Catering</a></li>
+                                <li><a href="reservations.html">Reservations</a></li>
+                                <li><a href="tips-tricks.html">Tips-Tricks & techniques</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+
+                            </ul>
+                    </ul>
+                </ul>
+                </li>
+
+            </div>
+        </div>
+        <hr>
+    </nav>
+    <div class="text-overlay">
+        <h1>Our Special Recipes</h1>
+        </div><br><br>
+    <main>
+            <section class="recipes">
+                <div class="recipes-header">
+                    <div class="recipes-content">
+                
+                    <h3>Recipes</h3>
+                    <p>
+                        Welcome to "Delicious Bites," your one-stop food shop and restaurant that offers an exquisite
+                        culinary experience! Our talented team of chefs takes pride in crafting mouthwatering recipes
+                        that tantalize your taste buds and leave you craving for more. From classic comfort foods to
+                        innovative dishes with a modern twist, our diverse menu caters to all palates. We source only
+                        the freshest, locally-sourced ingredients to ensure the highest quality and sustainability.
+                        Whether you're looking for a quick grab-and-go meal or a cozy dining experience, "Delicious
+                        Bites" promises to deliver exceptional flavors and impeccable service. Join us and embark on a
+                        gastronomic journey like no other!
+                    </p>
+            </section>
+            
+                <section class="recipes">
+                    <div class="recipes-header">
+                        <div class="recipes-content">
+       
+                        <h2>Featured Recipe: Delicious Pasta</h2>
+                        <p>
+                            Here's a simple and delicious pasta recipe you'll love!
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed eu lorem nec nisl euismod tristique et a erat. Fusce id suscipit ipsum.
+                        </p>
+                        <p>
+                        <h4>Ingredients:</h4>
+
+                        <p>250g pasta</p>
+                        <p>2 cups tomato sauce</p>
+                        <p>1/2 cup grated parmesan cheese</p>
+                        <p>2 cloves garlic, minced</p>
+                        <p>1/4 cup olive oil</p>
+                        <p>Salt and pepper to taste</p>
+
+                        </p>
+                        <p>
+                        <h4>Instructions:</h4>
+
+                        <p>Cook the pasta in boiling salted water until al dente.</p>
+                        <p>In a separate pan, sauté the minced garlic in olive oil until fragrant.</p>
+                        <p>Add the tomato sauce to the pan and simmer for 5 minutes.</p>
+                        <p>Drain the cooked pasta and add it to the sauce.</p>
+                        <p>Toss the pasta in the sauce until well coated.</p>
+                        <p>Serve hot, sprinkled with grated parmesan cheese and seasoned with salt and pepper.</p>
+
+                        </p>
+
+                </section>
+               
+                    <section>
+                        <section class="recipes">
+                            <div class="recipes-header">
+                                <div class="recipes-content">
+
+                                <h2>Delicious Chocolate Chip Cookies</h2>
+                                <p>
+                                    These mouthwatering chocolate chip cookies are a perfect treat for any occasion.
+                                    They are soft, chewy, and packed with gooey chocolate chips. This simple recipe
+                                    makes about two dozen cookies, so there's enough to share with family and friends or
+                                    to enjoy all by yourself.
+
+                                </p>
+                                <p>
+                                <h4>Ingredients:</h4>
+
+                                <p>1 cup (2 sticks) unsalted butter, softened</p>
+                                <p>1 cup granulated sugar</p>
+                                <p>1 cup packed brown sugar</p>
+                                <p>2 large eggs</p>
+                                <p>1 teaspoon pure vanilla extract</p>
+                                <p>3 cups all-purpose flour</p>
+                                <p>1 teaspoon baking soda</p>
+                                <p>1/2 teaspoon salt</p>
+                                <p>2 cups chocolate chips</p>
+
+                                </p>
+                                <p>
+                                <h4>Instructions:</h4>
+
+                                <p>Preheat your oven to 350°F (175°C) and line a baking sheet with parchment paper.
+                                </p>
+                                <p>In a large mixing bowl, cream together the softened butter, granulated sugar, and
+                                    brown sugar until light and fluffy.</p>
+                                <p>Add the eggs one at a time, beating well after each addition. Stir in the vanilla
+                                    extract.</p>
+                                <p>In a separate bowl, whisk together the flour, baking soda, and salt. Gradually add
+                                    this dry mixture to the wet ingredients, mixing until just combined.</p>
+                                <p>Gently fold in the chocolate chips until evenly distributed throughout the dough.
+                                </p>
+                                <p>Using a cookie scoop or tablespoon, drop rounded dough balls onto the prepared
+                                    baking sheet, leaving some space between each cookie.</p>
+                                <p>Bake in the preheated oven for 10-12 minutes or until the edges are lightly golden.
+                                </p>
+                                <p>Remove from the oven and let the cookies cool on the baking sheet for a few minutes
+                                    before transferring them to a wire rack to cool completely.</p>
+                                <p>Enjoy your freshly baked chocolate chip cookies with a glass of milk or your
+                                    favorite hot beverage!</p>
+
+
+                                </p>
+
+                        </section>
+
+    </main>
+
+    <div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4>Food company</h4>
+                        <ul>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="team.html">our team</a></li>
+                            <li><a href="about.html">our services</a></li>
+                            <li><a href="privacy-policy.html">privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="contact.html">contact us</a></li>
+                            <li><a href="contact.html">location</a></li>
+                            <li><a href="sitemap.html">sitemap</a></li>
+                            <li><a href="contact.html">frequently asked question</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Information</h4>
+                        <ul>
+                            <li><a href="#">Address: 123 Main Street, City State 12345</a></li>
+                            <li><a href="#">Phone: 123-456-7890</a></li>
+                            <li><a href="#">Email: info@foodpoint.com</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Opening Hours</h4>
+                        <ul>
+                            <li><a href="#">Monday To Friday<br>9:00 AM - 10:00 PM</a></li>
+                            <li><a href="#">Saturday or Sunday<br>10:00 AM - 11:00 PM</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <p class="copyright">copyright &copy;<a href="#"> 2050 info@foodpoint.com</a> | All Rights
+            Reserved | <a target="_blank" href="http://www.google.com/">Food_Point google.com</a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>

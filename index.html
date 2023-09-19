@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>  Food Point </title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            width: auto;
+            height: auto;
+            background: black;
+            overflow: hidden;
+            cursor: url(images/cursor.png), auto;
+            overflow: auto;
+            
+        }
+
+
+        .background-image {
+            position: absolute;
+            top: 30%;
+            bottom: 10%;
+            left: 45%;
+            right: 40%;
+            width: 50%;
+            height: 55%;
+            background-image: url(images/pizza_front.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: animate 2s ease-in-out 1;
+
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: scale(.5);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        #head-title {
+            font-size: 25px;
+            color: orangered;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 57px;
+            margin: -5px;
+            top: 0;
+            position: relative;
+            background-color: chocolate;
+            border-radius: 10px;
+
+        }
+
+        .navbar {
+            padding: 0px;
+            margin: 40px;
+            position: relative;
+            overflow: auto;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .navbar li {
+            width: 119px;
+            text-align: center;
+            list-style: none;
+            background: chocolate;
+            font-size: 15px;
+            float: left;
+            font-family: Arial;
+            padding: 0;
+            margin: 0;
+            background-color: chocolate;
+
+        }
+
+        .navbar a {
+            padding: 20px 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+
+        }
+
+        nav a:hover {
+            background: wheat;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .navbar li ul {
+            display: none;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .navbar li:hover ul {
+            display: block;
+        }
+
+        .navbar li ul li {
+            background-color: chocolate;
+
+
+        }
+
+        .navbar li ul li a:hover {
+            background-color: wheat;
+            color: black;
+
+        }
+
+        .content {
+            top: 27vh;
+            left: 10%;
+            width: 33%;
+            position: justify;
+            margin: top;
+            margin: bottom;
+            margin: 5%;
+            text-align: left;
+
+        }
+
+        .colorful hr {
+            border: none;
+            margin-top: -40px;
+            margin-left: 5px;
+        }
+
+        .content-hr {
+            background-color: green;
+            width: 375px;
+            height: 5px;
+
+        }
+
+        .search-form {
+            margin-top: 15px;
+            float: right;
+            margin-right: 25px;
+            margin-left: 0px;
+        }
+
+        input[type=text] {
+            padding: 7px;
+            border: none;
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+
+        .top-section button {
+            float: right;
+            background: green;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            position: relative;
+            padding: 7px;
+            font-family: sans-serif;
+            border: none;
+            font-size: 12px;
+        }
+
+        .bottom-section button {
+            float: right;
+            background: green;
+            color: #bbbbbb;
+            border-radius: 0 0px 0px 0;
+            cursor: pointer;
+            position: relative;
+            padding: 7px;
+            font-family: sans-serif;
+            font-weight: bold;
+            border: none;
+            font-size: 16px;
+        }
+
+        .bottom-section button:hover {
+            opacity: 0.9;
+            color: white;
+            background-color: green;
+        }
+
+        img{
+            display: flex;
+            margin: 1%;
+            max-width: 400%;
+            margin-top: 65px;
+            margin-left: 320px;
+            height: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .image-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            width: 1100px;
+            text-align: center;
+            margin-left: -15px;
+            height: auto;
+            object-fit: cover;
+
+        }
+
+        .image-list li {
+            flex-basis: 200px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .image-list li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        .image-list li a:hover {
+            text-decoration: none;
+            color: #ff0000;
+        }
+
+        .image-list li img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 295%;
+            margin-top: 40px;
+            margin-bottom: -80px;
+            justify-content: space-between;
+        }
+
+        .footer-col {
+            flex-basis: 20%;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-left: -40px;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            margin-left: -40px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbb;
+            display: block;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+            padding-left: 7px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+
+        @media(max-width: 767px) {
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+        .content p {
+            font-size: 22px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 1010px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 80px;
+            padding: 40px;
+            margin-top: 5px;
+            margin-bottom: -25%;
+            color: white;
+
+        }
+        
+        p.copyright {
+            text-align: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 230px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            margin: 55px 0;
+            margin-bottom: -45px;
+        }
+
+        p.copyright a {
+            color: white;
+            text-decoration: none;
+            display:inline-block;
+            margin: 0 0 25px;
+        }
+
+        p.copyright a:hover {
+            text-decoration: none;
+            color: #ff0000;
+        }
+
+        h1 {
+            color: aliceblue;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h2{
+            font-size: 55px;
+            color: darkorange;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            width: 1010px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 80px;
+            margin-top: -10px;
+            margin-bottom: -90px;
+            padding: 50px;
+        }
+
+
+        h3 {
+            text-align: center;
+            margin-top: 75px;
+            margin-bottom: -35px;
+            font-size: 60px;
+            font-weight: bold;
+            color: darkorange;
+            margin-right: 500px;
+            margin-left: 370px;
+            width: 400px;
+        }
+
+
+        h5 {
+            font-size: 50px;
+            color: darkorange;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            width: 1010px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 80px;
+            margin-top: -10px;
+            margin-bottom: -80px;
+            padding: 50px;
+        }
+
+
+        h6 {
+            font-size: 30px;
+            color: yellow;
+            font-weight: bold;
+            font-family: cursive;
+            width: 1010px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 80px;
+            margin-top: -60px;
+            margin-bottom: -90px;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div align="center">
+            <div id="header">
+                <div id="head-title">ミ★ 𝘍𝘰𝘰𝘥 𝘗𝘰𝘪𝘯𝘵 ★彡<br /></div>
+
+                <div class="background-image"></div>
+                <nav>
+                    <hr>
+                    <div class="top-section">
+                        <div id="wrap">
+                            <ul class="navbar">
+
+                                <ul>
+                                    <form class="search-form">
+                                        <input type="text" placeholder="search">
+                                        <button>search</button>
+                                    </form>
+
+                                    <li><a href="index.html"> Home</a></li>
+                                    <li><a href="menu.html">Menu</a></li>
+                                    <li><a href="about.html"> About Us</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="reviews.html">Reviews</a></li>
+                                    <li><a href="recipes.html">Recipes</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="#"> Food_Point</a>
+                                        <ul class="navbar">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="team.html">Team</a></li>
+                                            <li><a href="events.html">Events</a></li>
+                                            <li><a href="careers.html">Careers</a></li>
+                                            <li><a href="catering.html">Catering</a></li>
+                                            <li><a href="reservations.html">Reservations</a></li>
+                                            <li><a href="tips-tricks.html">Tips-Tricks & techniques</a>
+                                            </li>
+                                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                            <li><a href="sitemap.html">Sitemap</a></li>
+                                        </ul>
+                                </ul>
+                            </ul>
+                            </li>
+                        </div>
+                        <hr>
+                </nav>
+
+                <div class="" align="left">
+                    <div class="content">
+                        <div class="colorful">
+                            <div class="bottom-section">
+
+                                <h1>Don't waste your time any other shop ...</h1>
+                                <h1>World's Best Pizza Point ...</h1>
+                                <hr class="content-hr">
+
+                                <div class="bottom-section">
+                                    <a href="contact.html">
+                                        <button>ORDER NOW</button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="content">
+
+                            <h2>Welcome to Food Shop Restaurant</h2>
+                            <img src="images/food_shop2.jpg" alt="Restaurant Image">
+                            <p>We are dedicated to serving you delicious and mouthwatering dishes prepared with love and
+                                care. Our restaurant offers a cozy ambiance where you can relax and enjoy your dining
+                                experience. Our friendly staff is always ready to assist you and ensure your
+                                satisfaction.</p>
+                            <h5>Our Menu</h5>
+                            <p>At Food Shop Restaurant, we take pride in our diverse menu that caters to all taste
+                                preferences. From appetizers to desserts, we have something for everyone.</p>
+
+                            <h6>Appetizers:</h6>
+                            <p>Crispy Calamari, Bruschetta, Chicken Wings</p>
+                            <h6>Main Courses:</h6>
+                            <p>Grilled Salmon, Steak with Mushroom Sauce, Vegetarian Pasta</p>
+                            <h6>Desserts:</h6>
+                            <p>Lava Cake, Cheesecake, Tiramisu</p>
+
+                            <p>Our chefs carefully select the finest ingredients to create flavorful and satisfying
+                                dishes. We also offer a variety of beverages to complement your meal, including
+                                refreshing mocktails and a selection of wines.</p>
+                            <h5>Cozy Ambiance and Excellent Service</h5>
+                            <p>In addition to our delicious food, we prioritize providing a comfortable and enjoyable
+                                dining environment. Our restaurant is beautifully decorated, creating a warm and
+                                inviting atmosphere for you and your loved ones. Whether you're looking for a romantic
+                                dinner for two or a gathering with friends and family, Food Shop Restaurant is the
+                                perfect place to celebrate special occasions or simply enjoy a delightful meal.</p>
+                            <h5>Visit Us</h5>
+                            <p>We are conveniently located at 123 Main Street in the heart of the city. Our restaurant
+                                is open for both lunch and dinner, so you can visit us at your convenience. For
+                                reservations, please call us at 123-456-789. If you have any questions or inquiries,
+                                feel free to reach out to us via email at info@foodshoprestaurant.com.</p>
+                            <p>Thank you for choosing Food Shop Restaurant. We look forward to providing you with an
+                                unforgettable dining experience filled with delicious food, excellent service, and a
+                                welcoming atmosphere. Join us soon and let us treat you to a memorable culinary journey.
+                            </p>
+
+
+                        </div>
+                        <div>
+                            <div class="content" align="center">
+
+
+                                <h3>Meet our Chefs</h3><br><br>
+
+                                <ul>
+                                    <div class="" align="center"></div>
+                                    <Ul class="image-list">
+                                        <li class="first"> <a href="#"><img src="images/chef-1.jpg" alt="" /></a>
+                                            <a href="#"><br>Duislaoreet</a>
+                                        </li>
+                                        <li> <a href="#"><img src="images/chef-2.jpg" alt="" /></a> <a
+                                                href="#"><br>Curabitur</a>
+                                        </li>
+                                        <li> <a href="#"><img src="images/chef-3.jpg" alt="" /></a> <a
+                                                href="#"><br>Adipiscing</a>
+                                        </li>
+                                        <li> <a href="#"><img src="images/chef-4.jpg" alt="" /></a> <a href="#"><br>Sed
+                                                Volutpat</a> </li>
+                                        <li> <a href="#"><img src="images/chef-5.jpg" alt="" /></a> <a
+                                                href="#"><br>Nulla
+                                                lobortis</a> </li>
+                                        <li> <a href="#"><img src="images/chef-6.jpg" alt="" /></a> <a
+                                                href="#"><br>Suspendisse</a>
+                                        </li>
+                                        <li> <a href="#"><img src="images/chef-7.jpg" alt="" /></a> <a
+                                                href="#"><br>Tincidunt</a>
+                                        </li>
+                                        <li> <a href="#"><img src="images/chef-8.jpg" alt="" /></a> <a
+                                                href="#"><br>Tincidunt</a>
+                                        </li>
+                                        <li class="last">
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <footer class="footer">
+                                <div class="container">
+                                    <div class="row">
+
+                                        <div class="footer-col">
+                                            <h4>Food company</h4>
+                                            <ul>
+                                                <li><a href="about.html">about us</a></li>
+                                                <li><a href="team.html">our team</a></li>
+                                                <li><a href="about.html">our services</a></li>
+                                                <li><a href="privacy-policy.html">privacy policy</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="footer-col">
+                                            <h4>get help</h4>
+                                            <ul>
+                                                <li><a href="contact.html">contact us</a></li>
+                                                <li><a href="contact.html">location</a></li>
+                                                <li><a href="sitemap.html">sitemap</a></li>
+                                                <li><a href="contact.html">frequently asked question</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="footer-col">
+                                            <h4>Contact Information</h4>
+                                            <ul>
+                                                <li><a href="#">Address: 123 Main Street, City State 12345</a></li>
+                                                <li><a href="#">Phone: 123-456-7890</a></li>
+                                                <li><a href="#">Email: info@foodpoint.com</a></li>
+                                                <li><a href="#"></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="footer-col">
+                                            <h4>Opening Hours</h4>
+                                            <ul>
+                                                <li><a href="#">Monday To Friday<br>9:00 AM - 10:00 PM</a></li>
+                                                <li><a href="#">Saturday or Sunday<br>10:00 AM - 11:00 PM</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="footer-col">
+                                            <h4>follow us</h4>
+                                            <div class="social-links">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+                            <p class="copyright">copyright &copy;<a href="#"> 2050 info@foodpoint.com</a> | All Rights
+                                Reserved | <a target="_blank" href="http://www.google.com/">Food_Point google.com</a>
+                            </p>
+                        </div>
+
+</body>
+
+</html>

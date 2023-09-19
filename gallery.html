@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Pizza Point </title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background-color: black;
+
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+
+        #head-title {
+            font-size: 35px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 57px;
+            margin: -5px;
+            position: relative;
+            background-color: chocolate;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: auto;
+        }
+
+
+        .navbar li {
+            width: 119px;
+            text-align: center;
+            list-style: none;
+            background: chocolate;
+            font-size: 15px;
+            float: left;
+            font-family: Arial;
+            padding: 0;
+            margin: 0;
+            background-color: chocolate;
+        }
+
+        .navbar a {
+            padding: 20px 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        nav a:hover {
+            background: wheat;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .navbar li ul {
+            display: none;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li:hover ul {
+            display: block;
+        }
+
+        .navbar li ul li {
+            background-color: chocolate;
+
+        }
+
+        .navbar li ul li a:hover {
+            background-color: wheat;
+            color: black;
+
+        }
+
+        .search-form {
+            margin-top: 15px;
+            float: right;
+            margin-right: 25px;
+        }
+
+        input[type=text] {
+            padding: 7px;
+            border: none;
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+
+        button {
+            float: right;
+            background: green;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            position: relative;
+            padding: 7px;
+            font-family: sans-serif;
+            border: none;
+            font-size: 12px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 20px;
+            margin-right: 10px;
+            width: 101%;
+            margin-top: 50px;
+            margin-bottom: -120px;
+            justify-content: space-between;
+        }
+
+        .footer-col {
+
+            flex-basis: 20%;
+            padding: 21px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-left: -10px;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 10;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            text-align: left;
+            font-family: 'poppins', sans-serif;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 7px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            margin-top: 0;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+
+        @media(max-width: 767px) {
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+        p.copyright {
+            text-align: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            margin: 55px 0;
+            margin-top: 10%;
+            margin-bottom: 20px;
+        }
+
+        p.copyright a {
+            color: white;
+            text-decoration: none;
+        }
+
+        p.copyright a:hover {
+            text-decoration: none;
+            color: #ff0000;
+        }
+
+        .container {
+            max-width: 1200PX;
+            margin: auto;
+            background: #f2f2f2;
+            overflow: auto;
+        }
+
+        .Gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 390px;
+        }
+
+        .Gallery img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .Gallery:hover img {
+            transform: scale(1.05);
+        }
+
+
+        .desc {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+
+        <div align="center">
+            <div id="header">
+                <div id="head-title">Gallery<br /></div>
+            </div>
+
+            <div class="background-image"></div>
+            <hr>
+
+            <div id="wrap">
+                <ul class="navbar">
+
+                    <ul>
+                        <form class="search-form">
+                            <input type="text" placeholder="search">
+                            <button>search</button>
+                        </form>
+
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html"> About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#"> Food_Point</a>
+                            <ul class="navbar">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="catering.html">Catering</a></li>
+                                <li><a href="reservations.html">Reservations</a></li>
+                                <li><a href="tips-tricks.html">Tips-Tricks & techniques</a>
+                                </li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+                            </ul>
+                    </ul>
+                </ul>
+                </li>
+            </div>
+        </div>
+        </div>
+        <hr>
+    </nav>
+
+    <div class="terms-text">
+
+        <div class="container">
+
+            <div class="Gallery">
+                <img src="images/gallary-1.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-2.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-3.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-4.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-5.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-6.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-7.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-8.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-9.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-10.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-11.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+            <div class="Gallery">
+                <img src="images/gallary-12.jpg">
+                <div class="desc"> Add a description of the image here</div>
+            </div>
+
+        </div>
+
+        <div>
+            <footer class="footer">
+                <div class="container"></div>
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4>Food company</h4>
+                        <ul>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="team.html">our team</a></li>
+                            <li><a href="about.html">our services</a></li>
+                            <li><a href="privacy-policy.html">privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="contact.html">contact us</a></li>
+                            <li><a href="contact.html">location</a></li>
+                            <li><a href="sitemap.html">sitemap</a></li>
+                            <li><a href="contact.html">frequently asked question</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Information</h4>
+                        <ul>
+                            <li><a href="#">Address: 123 Main Street, City State 12345</a></li>
+                            <li><a href="#">Phone: 123-456-7890</a></li>
+                            <li><a href="#">Email: info@foodpoint.com</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Opening Hours</h4>
+                        <ul>
+                            <li><a href="#">Monday To Friday<br>9:00 AM - 10:00 PM</a></li>
+                            <li><a href="#">Saturday or Sunday<br>10:00 AM - 11:00 PM</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </footer>
+        <p class="copyright">copyright &copy;<a href="#"> 2050 info@foodpoint.com</a> | All Rights
+            Reserved | <a target="_blank" href="http://www.google.com/">Food_Point google.com</a>
+        </p>
+
+    </div>
+
+
+</body>
+
+</html>
